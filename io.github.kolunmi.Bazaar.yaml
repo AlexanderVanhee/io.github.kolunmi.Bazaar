@@ -2,7 +2,7 @@ id: io.github.kolunmi.Bazaar
 runtime: org.gnome.Platform
 runtime-version: '50'
 sdk: org.gnome.Sdk
-command: bazaar
+command: bazaar-daemon
 finish-args:
   - --share=network
   - --share=ipc
@@ -52,6 +52,21 @@ modules:
         commit: 14218459ab8c0f86198b381b4b8fe9eeb46ea911
 
     modules:
+      - name: libdex
+        buildsystem: meson
+        config-opts:
+          - --buildtype=debugoptimized
+          - -Ddocs=false
+          - -Dintrospection=enabled
+          - -Dexamples=false
+          - -Dtests=false
+          - -Dsysprof=false
+        sources:
+          - type: git
+            url: https://gitlab.gnome.org/GNOME/libdex.git
+            commit: 26d094f2d7a4561862cce3efa00bb5aa1e4b0720
+            tag: 1.2.beta
+
       - name: md4c
         buildsystem: cmake
         config-opts:
