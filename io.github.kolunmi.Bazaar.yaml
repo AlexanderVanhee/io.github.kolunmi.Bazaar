@@ -49,7 +49,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/World/bazaar.git
-        commit: 4d8e5dbd29e96624e4d5759bcb3699e18637235d
+        commit: dcdc113d5ca7164f3595f0db91452154a5c16d1d
 
     modules:
       - name: libdex
